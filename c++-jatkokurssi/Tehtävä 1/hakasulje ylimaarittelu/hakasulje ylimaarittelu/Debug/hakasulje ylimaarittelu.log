@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  hakasulje ylimaarittelu.cpp
+c:\users\heka\desktop\koulu\summer semester ja averko\c++-jatkokurssi\projektit\tehtävä 1\hakasulje ylimaarittelu\hakasulje ylimaarittelu\hakasulje ylimaarittelu.cpp(35): error C2789: 'Vektori::eka': an object of const-qualified type must be initialized
+  c:\users\heka\desktop\koulu\summer semester ja averko\c++-jatkokurssi\projektit\tehtävä 1\hakasulje ylimaarittelu\hakasulje ylimaarittelu\hakasulje ylimaarittelu.cpp(29): note: see declaration of 'Vektori::eka'
+c:\users\heka\desktop\koulu\summer semester ja averko\c++-jatkokurssi\projektit\tehtävä 1\hakasulje ylimaarittelu\hakasulje ylimaarittelu\hakasulje ylimaarittelu.cpp(36): error C2166: l-value specifies const object

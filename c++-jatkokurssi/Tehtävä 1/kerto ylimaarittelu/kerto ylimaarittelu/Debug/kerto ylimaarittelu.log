@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  kerto ylimaarittelu.cpp
+c:\users\heka\desktop\koulu\summer semester ja averko\c++-jatkokurssi\projektit\kerto ylimaarittelu\kerto ylimaarittelu\kerto ylimaarittelu.cpp(77): warning C4101: 'p': unreferenced local variable
+  kerto ylimaarittelu.vcxproj -> C:\Users\Heka\Desktop\Koulu\Summer semester ja averko\c++-jatkokurssi\Projektit\kerto ylimaarittelu\Debug\kerto ylimaarittelu.exe
