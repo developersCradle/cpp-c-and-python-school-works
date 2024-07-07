@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int luku1,jakojaannos;
+
+    printf("Anna kokonaisluku:");
+	scanf("%i", &luku1);
+	jakojaannos = luku1 % 2;
+	printf("Luku on %d", jakojaannos);
+	
+    
+}

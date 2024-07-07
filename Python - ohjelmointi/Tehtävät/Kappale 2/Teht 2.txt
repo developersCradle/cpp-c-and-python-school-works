@@ -1,0 +1,4 @@
+muuttuja_1 = 24
+muuttuja_2 = 1000
+
+print("Laskutoimituksen tulos on:", (muuttuja_1+muuttuja_2+15)**2)

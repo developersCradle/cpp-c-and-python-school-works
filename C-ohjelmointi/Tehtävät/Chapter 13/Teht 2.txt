@@ -1,0 +1,17 @@
+
+void laske_ja_tulosta(int * taul,int  koko)
+{
+	int summa = 0;
+	
+	printf("Taulukon alkiot:", koko);
+	for(int i = 0; i < koko; i++)
+	{
+		
+		summa += *taul;
+		printf(" %d", *taul);
+		*taul++;
+	}
+	
+	printf("\nSumma = %d", summa);
+	return;
+}

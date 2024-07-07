@@ -1,0 +1,21 @@
+ #include <stdio.h> 
+     
+int main(void) 
+{ 
+	FILE *tied_kahv; 
+    float luku1, luku2, luku3, luku4; 
+  
+   	if((tied_kahv = fopen("hello.usr", "w")) == NULL) 
+   	{ 
+    	printf("Tiedostoa ei löydetty!"); 
+		return 0; 
+    } 
+	else 
+	{ 
+		fprintf(tied_kahv, "Moi maailma!\n"); 
+		printf("Tiedostoon kirjoittaminen onnistui.\n"); 
+		fclose(tied_kahv); 
+	} 
+	printf("Ohjelma suljetaan.");
+	   return 0; 
+}

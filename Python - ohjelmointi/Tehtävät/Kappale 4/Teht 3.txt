@@ -1,0 +1,6 @@
+kier = int(input("Kuinka monta kierrosta?: "))
+summa = 0
+for i in range(1,kier):
+    summa = summa + i
+
+print("Kertymäksi saatiin:",summa) 

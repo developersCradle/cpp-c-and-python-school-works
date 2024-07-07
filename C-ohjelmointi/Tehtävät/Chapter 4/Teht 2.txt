@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int kok_luku, jakojaannos;
+	
+	printf("Anna kokonaisluku:");
+	scanf("%d", &kok_luku);
+	jakojaannos = kok_luku % 2;
+	printf("Luku on %d", jakojaannos);
+	
+	
+	return 0;
+}

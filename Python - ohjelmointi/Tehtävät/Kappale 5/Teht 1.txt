@@ -1,0 +1,5 @@
+tiedosto = open("faktat.txt","r")
+sisalto = tiedosto.readlines()
+print("Tiedostosta luettiin teksti:")
+for i in sisalto:
+	print(i)

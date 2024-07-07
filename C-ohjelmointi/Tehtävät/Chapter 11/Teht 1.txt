@@ -1,0 +1,91 @@
+#include <stdio.h>
+
+struct henkilo
+{
+	char etunimi[21]; // Tiedot enint‰‰n 20 merkki‰, '0' ei lasketa merkiksi.
+	char sukunimi[21];
+	char puhelinnumero[21];
+};
+
+int lueIlmentymat();
+void talletaHenkilo(struct henkilo a);	
+struct henkilo kysytiedot();
+
+
+
+int main(void)
+{
+	
+	
+	if(lueIlmentymat() == -1) // Ongelmia tiedoston lukemisessa
+	{
+		return 0;
+	}
+	else if(lueIlmentymat() < 50 ) 	//Korkeintaan 50 henkilˆ‰
+	{
+		talletaHenkilo(kysytiedot());
+	}
+
+	
+	
+	return 0;
+}
+
+int lueIlmentymat()
+{
+	int luettu_luku = 0;
+	FILE * tied_kahv;
+	
+	if((tied_kahv = fopen("luettelo.txt", "r")) == NULL)
+	{
+		printf("Tiedostoa ei lˆydetty!");
+		return -1;
+	}
+	else 
+	{
+		fscanf(tied_kahv, "%i", &luettu_luku); 
+		fclose(tied_kahv);  
+		return luettu_luku;
+	}
+}
+
+
+
+void talletaHenkilo(struct henkilo tiedot)
+{
+	FILE * tiedosto_kahva;
+	
+	if((tiedosto_kahva = fopen("luettelo.txt", "a" )) == NULL) // Lis‰t‰‰n tiedoston loppuun 'a', olettaen sinne on tehty enter painallus alkuun
+	{
+		printf("Tiedostoa ei lˆydetty!");
+		
+		return;
+	}
+	else
+	{
+		fprintf(tiedosto_kahva,"%s %s %s\n", tiedot.etunimi, tiedot.sukunimi, tiedot.puhelinnumero);
+		printf("Tietojen tallennus onnistui.");
+	}
+		
+	
+	fclose(tiedosto_kahva);
+	
+	return;
+	
+}
+
+struct henkilo kysytiedot()
+{
+	struct henkilo tieto; 
+	
+	printf("Anna etunimi:");
+	scanf("%s", &tieto.etunimi);
+	
+	printf("Anna sukunimi:");
+	scanf("%s", &tieto.sukunimi);
+		
+	printf("Anna puhelinnumero:");
+	scanf("%s", &tieto.puhelinnumero);
+	
+	return tieto;
+}

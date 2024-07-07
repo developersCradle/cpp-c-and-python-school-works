@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int luku,tulos,i;
+
+    printf("Anna kokonaisluku:");
+    scanf("%i", &luku);
+    tulos = luku;
+	
+    for (i = 2; i < luku; i++) {
+        tulos *= i;
+    }
+
+    printf("Luvun %i kertoma on %i", luku, tulos);
+}

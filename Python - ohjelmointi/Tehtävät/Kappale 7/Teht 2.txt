@@ -1,0 +1,65 @@
+import random
+
+kierrokset = 0
+tasan = 0
+voitot = 0
+
+def pelaa(aiVal, pelVal):
+	global tasan
+	global voitot
+	global kierrokset
+	
+	kierrokset += 1
+	
+	#Jalalle
+	if(aiVal == "Jalka" and pelVal == "Jalka"):
+		tasan += 1
+		return "Tasapeli!"
+	elif(aiVal == "Jalka" and pelVal == "Ydinase"):
+		voitot += 1
+		return "Voitit!"
+	elif(aiVal == "Jalka" and pelVal == "Torakka"):
+		return "Hävisit!"
+	#Torakalle
+	if(aiVal == "Torakka" and pelVal == "Jalka"):
+		voitot += 1
+		return "Voitit!"
+	elif(aiVal == "Torakka" and pelVal == "Ydinase"):
+		return "Hävisit!"
+	elif(aiVal == "Torakka" and pelVal == "Torakka"):
+		tasan += 1
+		return "Tasapeli!"
+	#Ydinaseelle
+	if(aiVal == "Ydinase" and pelVal == "Jalka"):
+		return "Hävisit!"
+	elif(aiVal == "Ydinase" and pelVal == "Ydinase"):
+		tasan += 1
+		return "Tasapeli!"
+	elif(aiVal == "Ydinase" and pelVal == "Torakka"):
+		voitot += 1
+		return "Voitit!"
+		
+
+def aiValinta():
+	kone = random.randint(1,3)
+	if(kone == 1):
+		return "Jalka"
+	elif(kone == 2):
+		return "Ydinase"
+	else:
+		return "Torakka"
+
+while True:
+	
+	valinta = input("Jalka, Ydinase vai Torakka? (Lopeta lopettaa):")
+	
+	if(valinta == "Lopeta"):
+		print("Pelasit",kierrokset,"kierrosta, joista voitit",voitot,"ja pelasit tasan",tasan,"peliä.")
+		break
+		
+	print("Sinä valitsit:", valinta)
+	tietokoneenValinta = aiValinta()
+	print("tietokone valitsi:", tietokoneenValinta)
+	vastaus = pelaa(tietokoneenValinta, valinta)
+	print(vastaus)
+	

@@ -1,0 +1,162 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int etsiPoistettavaRivi();
+int lueIlmentymat();
+void poistaTieto(int rivi);
+
+int main()
+{
+	int rivi;
+
+	rivi = etsiPoistettavaRivi();
+	//printf("rivi oli %d", rivi);
+	if (rivi == -1) // -1 on tapahtunut virhe
+	{
+		return 0;
+	}
+
+	//printf("Rivi oli %d\n", rivi);
+	poistaTieto(rivi);
+
+
+	// Poistetaan vanha tiedosto
+	remove("luettelo.txt");
+	// Nimetään se uudelleen
+	rename("luetteloTemp.txt", "luettelo.txt");
+
+	return 0;
+}
+
+int lueIlmentymat()
+{
+	int luettu_luku = 0;
+	FILE * tied_kahv;
+
+	if ((tied_kahv = fopen("luettelo.txt", "r")) == NULL)
+	{
+		printf("Tiedostoa ei löydetty!");
+		return -1;
+	}
+	else
+	{
+		fscanf(tied_kahv, "%i", &luettu_luku);
+		fclose(tied_kahv);
+		return luettu_luku;
+	}
+}
+
+int etsiPoistettavaRivi()
+{
+
+	char annettu_etunimi[21];
+	char annettu_sukunimi[21];
+
+	char etunimi[21];
+	char sukunimi[21];
+	char puhelinnumero[21];
+
+	int kerrat;
+
+	printf("Anna etunimi:");
+	scanf("%s", annettu_etunimi);
+
+	printf("Anna sukunimi:");
+	scanf("%s", annettu_sukunimi);
+
+
+
+	FILE * tiedosto_kahva;
+
+	if ((tiedosto_kahva = fopen("luettelo.txt", "r")) == NULL)
+	{
+		printf("Tiedostoa ei löydetty!");
+		fclose(tiedosto_kahva);
+		return -1;
+	}
+	else
+	{
+
+		fscanf(tiedosto_kahva, "%i", &kerrat);
+
+		for (int i = 0; i <= kerrat; i++)
+		{
+			fscanf(tiedosto_kahva, "%s %s %s", &etunimi, &sukunimi, &puhelinnumero);
+
+			//printf("%s %s", etunimi, annettu_etunimi);
+
+			if (((strcmp(annettu_etunimi, etunimi)) == 0) && ((strcmp(annettu_sukunimi, sukunimi)) == 0))
+			{
+
+				//printf("%s %s %s %s",annettu_etunimi, etunimi, annettu_sukunimi, sukunimi );
+				fclose(tiedosto_kahva);
+				return i; // palautetaan rivi i:stä nähden
+
+
+			}
+
+
+		}
+
+
+	}
+	printf("Etsimääsi henkilöä ei löytynyt luettelosta.");
+	fclose(tiedosto_kahva);
+	return -1;
+}
+
+void poistaTieto(int rivi)
+{
+	char etunimi[21];
+	char sukunimi[21];
+	char puhelinnumero[21];
+	//FILE * tied_kahva,  tied_kahva2; ei toimi.
+	FILE * tied_kahva, *tied_kahva2;// tied_kahva2 kirjoittamista varten, tied_kahva lukemista varten
+	int kerrat;
+
+	if ((tied_kahva2 = fopen("luetteloTemp.txt", "w")) == NULL)// Kirjoitetaan uuteen tiedostoon
+	{
+		printf("Tiedostoa ei löydetty!");
+		fclose(tied_kahva2);
+
+		return;
+	}
+
+	if ((tied_kahva = fopen("luettelo.txt", "r")) == NULL)// Luetaan tiedosto
+	{
+		printf("Tiedostoa ei löydetty!");
+		fclose(tied_kahva);
+
+		return;
+	}
+	else
+	{
+
+		fscanf(tied_kahva, "%d", &kerrat);
+		fprintf(tied_kahva2, "%d\n", kerrat - 1);	// Lisätään uuteen tiedostoon -1 rivit(koska poistetaan yksi tieto)
+
+		for (int i = 0; i < kerrat; i++)
+		{
+
+			fscanf(tied_kahva, "%s %s %s", &etunimi, &sukunimi, &puhelinnumero); // Sijoitetaan tarkistusta varten
+
+			if (rivi != i)
+			{
+
+				//printf("%s %s %s\n", etunimi, sukunimi, puhelinnumero);
+
+				fprintf(tied_kahva2, "%s %s %s\n", &etunimi, &sukunimi, &puhelinnumero); // Kopioidaan kaikki muut paitsi poistettava rivi uuteen tiedostoon
+
+			}
+		}
+
+	}
+	printf("Tiedot poistettu luettelosta.");
+
+
+	fclose(tied_kahva2);
+	fclose(tied_kahva);
+
+	return;
+}

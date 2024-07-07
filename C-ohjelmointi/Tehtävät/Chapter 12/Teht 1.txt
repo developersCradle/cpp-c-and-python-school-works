@@ -1,0 +1,8 @@
+void muuta_lukua(int x)
+{
+	printf("Aliohjelmassa: x = %d\n", x+3);
+	
+	return;
+}
+	
+	

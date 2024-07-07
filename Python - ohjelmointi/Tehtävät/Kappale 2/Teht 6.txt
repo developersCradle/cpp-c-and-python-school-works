@@ -1,0 +1,4 @@
+jono = "Hattukauppias"
+print("Muuttujan 4 ensimmäistä kirjainta ovat", jono[:4])
+print("Muuttujan 4 viimeistä kirjainta ovat", jono[9:])
+print("Muuttujan teksti on väärinpäin", jono[::-1])

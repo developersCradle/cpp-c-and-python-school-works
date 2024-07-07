@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(void)
+{
+	printf("Ohjelma tallentaa etunimesi ja sukunimesi tiedostoon.\n");
+	char etunimi[16], sukunimi[21], tiedosto[10];
+
+	printf("Syötä etunimesi:");
+	scanf("%s", etunimi);
+
+	printf("Syötä sukunimesi:");
+	scanf("%s", sukunimi);
+
+	printf("Tiedosto johon haluat tallentaa nimesi:");
+	scanf("%s", tiedosto);
+	char * ptiedosto = tiedosto;
+	
+	FILE * tiedosto_kahva;
+	
+	tiedosto_kahva = fopen(ptiedosto, "w");
+	
+	if(tiedosto_kahva == NULL)
+	{
+		printf("Tiedoston avauksessa on tapahtunut virhe!");
+		return 0;
+	}
+	else
+	{
+		fprintf(tiedosto_kahva, "%s %s", &etunimi, &sukunimi);
+
+		
+		printf("Tallennus onnistui!\n");
+		fclose(tiedosto_kahva);
+		
+	}
+	
+	
+	
+	   
+	return 0;
+}

@@ -1,0 +1,7 @@
+void muuta_lukua(int * x )
+{
+	*x = *x+3;
+	printf("Aliohjelmassa: x = %d\n", *x);
+	
+	return;
+}

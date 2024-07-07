@@ -1,0 +1,3 @@
+def tulosta(teksti):
+	print("Saatiin syöte:",teksti)
+	print("Syötteen pituus on",len(teksti)," merkkiä.")

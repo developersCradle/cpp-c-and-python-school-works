@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void)
+{
+	float euron_kerroin = 5.94573, markka_maara, euro_maara;
+	
+	printf("Syötä jokin markkamäärä: ");
+	scanf("%f", &markka_maara);
+	euro_maara =  markka_maara/euron_kerroin;
+	
+	printf("Markat euroina: %.2f", euro_maara);
+
+	
+	return 0;
+}

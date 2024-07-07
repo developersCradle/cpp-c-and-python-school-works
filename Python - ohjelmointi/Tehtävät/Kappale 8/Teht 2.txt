@@ -1,0 +1,12 @@
+try:
+	tied_nimi = input("Anna tiedoston nimi:")
+	tiedosto = open(tied_nimi,"r")
+	luettu = tiedosto.readline()
+	tulos = (int(luettu) + 313)
+	
+except IOError:
+	print("Virheellinen tiedostonnimi")
+except ValueError:
+	print("Tiedoston sisältö virheellinen!")
+else:
+	print("Saatiin tulos", tulos)

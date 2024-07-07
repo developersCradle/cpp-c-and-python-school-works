@@ -1,0 +1,18 @@
+def pituusmitta(mitta):
+	return len(mitta)
+	
+def main():
+	while True:
+		muuttuja = input("Anna syöte (Lopeta lopettaa): ")
+		if(muuttuja == "Lopeta"):
+			break
+		elif(pituusmitta(muuttuja) == 0):
+			print("Et antanut syötettä")
+		else:
+			print("Antamasi syöte oli",pituusmitta(muuttuja),"merkkiä pitkä.")
+			
+		
+	
+	
+if __name__ == "__main__":
+	main()

@@ -1,0 +1,11 @@
+while True:
+	teksti = input("Kirjoita jotain:")
+	
+	
+	if(teksti == "lopeta"):
+		break
+	print(teksti)
+		
+print("Lopetit ohjelman.")
+	
+

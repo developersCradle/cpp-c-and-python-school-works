@@ -1,0 +1,13 @@
+
+def toinenpotenssi(potenssi):
+	#potenssi = potenssi**
+	print("Toinen potenssi on", potenssi**2)
+
+def main():
+	potenssi = int(input("Anna lukuarvo:"))
+	toinenpotenssi(potenssi)
+	
+	
+	
+if __name__ == "__main__":
+	main()

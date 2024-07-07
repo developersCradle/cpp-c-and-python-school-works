@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int luku1,luku2;
+
+    printf("Anna eka luku:");
+	scanf("%i", &luku1);
+	
+	printf("Anna toka luku:");
+	scanf("%i", &luku2);
+	
+	printf("%i+%i=%i\n%i-%i=%i\n%i*%i=%i\n", luku1,luku2,luku1+luku2,luku1,luku2,luku1-luku2,luku1,luku2,luku1*luku2);// Silmiin koskee katsoa x(
+    
+}

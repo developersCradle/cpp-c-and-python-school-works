@@ -1,0 +1,28 @@
+import time
+
+while True:
+    print("""(1) Lue muistikirjaa
+(2) Lis‰‰ merkint‰
+(3) Tyhjenn‰ muistikirja
+(4) Lopeta""")
+    vali=int(input("Mit‰ haluat tehd‰?: "))
+    if vali == 1:
+        kahva = open("muistio.txt","r")
+        sisalto = kahva.readline()
+        print(sisalto)
+        kahva.close()
+    elif vali == 2:
+        kahva = open("muistio.txt","a")
+        lisays = input("Kirjoita uusi merkint‰: ")
+        lisays = lisays +":::"+ time.strftime("%X %x") + "\n"
+        kahva.write(lisays)
+        kahva.close()
+    elif vali == 3:
+        kahva = open("muistio.txt","w")
+        print("Muistio tyhjennetty.")
+        kahva.close()
+    elif vali == 4:
+        print("Lopetetaan.")
+        break
+    else:
+        print("Tuntematon valinta.")

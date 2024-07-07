@@ -1,0 +1,14 @@
+tiedosto = open("merkkijonoja.txt","r")
+luettu = tiedosto.readlines()
+
+tiedosto.close()
+
+for i in luettu:
+	test = i[:-1] #Leikataan rivinvaihto
+	if(test.isalnum()):
+		print(test, "kelpaa salasanaksi.")
+	else:
+		print(test, "sis‰lt‰‰ virheellisi‰ merkkej‰.")
+	
+	
+

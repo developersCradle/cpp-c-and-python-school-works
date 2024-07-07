@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main (void)
+{
+	FILE * tiedosto_kahva;
+	int luku1, luku2, luku3, luku4;
+	if((tiedosto_kahva = fopen("luvut.s", "r")) == NULL)
+	{
+		printf("Teidosto ei löytyny!");
+		return 0;
+	}
+	else
+	{
+		fscanf(tiedosto_kahva, "%d %d %d %d", &luku1,&luku2,&luku3,&luku4);
+		fclose(tiedosto_kahva);
+		
+		printf("Tiedostosta luvut.s löytyneet luvut:\n%d, %d, %d ja %d\n", luku1, luku2, luku3, luku4);
+		
+		printf("Lukujen summa: %d", luku1+luku2+luku3+luku4);
+	}
+	
+	return 0;
+}

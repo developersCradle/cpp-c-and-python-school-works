@@ -1,0 +1,6 @@
+try:
+	luku = int(input("Anna luku:"))
+except Exception:
+	print("Virheellinen syöte!")
+else:
+	print("Syöte oli kelvollinen.")

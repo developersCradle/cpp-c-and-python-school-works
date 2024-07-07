@@ -1,0 +1,10 @@
+from random import randint
+
+print("Heitetään kolikkoa viidesti:")
+
+for i in range(5):
+	if(randint(1,5) == 1):
+		print("Kruuna!")
+	else:
+		print("Klaava!")
+	

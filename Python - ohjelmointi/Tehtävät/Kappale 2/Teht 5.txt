@@ -1,0 +1,4 @@
+print("Laskin")
+luku_1 = int(input("Anna ensimmäinen luku:"))
+luku_2 = int(input("Anna toinen luku:"))
+print("Tulos on:", luku_1+luku_2)

@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+
+int main(void)
+{
+	float tyo_tunnit[30], yhteensa;
+	int syote, i;
+	
+	printf("Ohjelma laskee yhteen haluamasi ajanjakson aikana\ntehdyt työtunnit sekä keskimääräisen työpäivän pituuden.\n");
+	printf("Kuinka monta päivää:");
+	
+	scanf("%d",&syote);
+	
+	for (i = 1; syote >= i ;i++)
+	{
+		printf("Anna %d. päivän työtunnit:", i);
+		scanf("%f", &tyo_tunnit[i-1]);	
+	}
+	
+	for(i = 1; syote >= i ;i++)
+	{
+		yhteensa += tyo_tunnit[i-1];
+	}
+	
+	printf("Tehdyt työtunnit yhteensä: %.1f\n",yhteensa);
+	
+	printf("Keskimääräinen työpäivän pituus: %.1f\n", yhteensa/syote);
+	
+	printf("Syötetyt tunnit: ");
+	for(i = 1; syote >= i ;i++)
+	{
+		printf("%.1f ", tyo_tunnit[i-1]);
+	}
+	return 0;
+}

@@ -1,0 +1,54 @@
+import time
+tiedosto = "muistio.txt"
+ 
+while True:
+    try:
+        kahva = open(tiedosto,"r")
+        kahva.close()
+    except IOError:
+        print("Oletusmuistioa ei löydy, luodaan tiedosto.")
+        kahva = open(tiedosto,"w")
+        kahva.close()
+ 
+    print("Käytetään muistiota: ",tiedosto)
+    print("""(1) Lue muistikirjaa
+(2) Lisää merkintä
+(3) Tyhjennä muistikirja
+(4) Vaihda muistiota
+(5) Lopeta""")
+    valinta = int(input("Mitä haluat tehdä?: "))
+    if valinta == 1:
+        kahva = open(tiedosto,"r")
+        lista = kahva.read()
+        print(lista)
+        kahva.close()
+ 
+    elif valinta == 2:
+        kahva = open(tiedosto,"a")
+        merkinta = input("Kirjoita uusi merkintä: ")
+        aikaleima = time.strftime("%X %x")
+        kahva.write(merkinta+":::"+aikaleima+"\n")
+        kahva.close()
+ 
+    elif valinta == 3:
+        kahva = open(tiedosto,"w")
+        kahva.close()
+        print("Muistio tyhjennetty.")
+    elif valinta == 4:
+        uusi = input("Anna tiedoston nimi: ")
+        try:
+            kahva = open(uusi,"r")
+            kahva.close()
+            tiedosto = uusi
+        except IOError:
+            print("Tiedostoa ei löydy, luodaan tiedosto.")
+            kahva = open(uusi,"w")
+            kahva.close()
+            tiedosto = uusi
+ 
+    elif valinta == 5:
+        print("Lopetetaan.")
+        break
+    else:
+        print("Tuntematon valinta.")
+

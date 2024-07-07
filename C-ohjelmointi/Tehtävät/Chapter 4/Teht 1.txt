@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main (void)
+{
+	int eka,toka;
+	
+	printf("Anna eka luku: ");
+	scanf("%d", &eka);
+	
+	printf("Anna toka luku: ");
+	scanf("%d", &toka);
+
+	
+	
+	printf("%d+%d=%d\n%d-%d=%d\n%d*%d=%d\n",eka,toka,eka+toka,eka,toka,eka-toka,eka,toka,eka*toka);
+	
+	return 0;
+}

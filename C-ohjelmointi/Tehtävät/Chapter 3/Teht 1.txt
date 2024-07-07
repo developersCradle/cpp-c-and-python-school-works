@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int kok_luku;
+	float liuku_luku;
+	
+	printf("Anna kokonaisluku: ");
+	scanf("%d", &kok_luku);
+	printf("Anna desimaaliluku: ");
+	scanf("%f", &liuku_luku);
+	
+	printf("Syöttämäsi kokonaisluku: %d \n" , kok_luku);
+	printf("Syöttämäsi desimaaliluku kahden desimaalin tarkkuudella: %.2f" , liuku_luku);
+	
+	return 0;
+}

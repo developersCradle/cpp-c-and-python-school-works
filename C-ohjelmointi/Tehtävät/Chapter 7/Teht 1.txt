@@ -1,0 +1,16 @@
+void kissa(void)
+{
+	printf("Kissa sanoo miau!\n");
+	return;
+}
+void koira(void)
+{
+	printf("Koira sanoo hau-hau!\n");
+	return;
+}
+
+void lehma(void)
+{
+	printf("Lehmä sanoo ammuu!\n");
+	return;
+}

@@ -1,0 +1,38 @@
+#include <stdio.h> 
+    
+int main() 
+{ 
+	int numero, eka_luku, toka_luku; 
+
+	printf("1: vähennyslasku\n2: yhteenlasku\n3: kertolasku "); 
+	printf("Valitse toiminto:");
+	scanf("%d", &numero);
+	printf("Anna eka luku:");
+	scanf("%d", &eka_luku);
+	printf("Anna toka luku:");
+	scanf("%d", &toka_luku);
+
+	switch(numero) 
+	{ 
+	case 1: 
+		{ 
+			printf("%d-%d=%d", eka_luku,toka_luku, eka_luku-toka_luku); 
+			break; 
+		} 
+	case 2: 
+		{  
+			printf("%d+%d=%d", eka_luku,toka_luku, eka_luku+toka_luku); 
+			break; 
+		} 
+	case 3: 
+		{ 
+			printf("%d*%d=%d", eka_luku,toka_luku, eka_luku*toka_luku);  
+			break; 
+		} 
+	default: 
+		printf("Virhe antamassasi operaatiossa.\n"); 
+                break;
+	} 
+
+	return 0; 
+}

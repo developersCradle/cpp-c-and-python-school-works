@@ -1,0 +1,21 @@
+lista = []
+
+while True:
+	valinta = int(input("Haluatko\n(1)Lisätä listaan\n(2)Poistaa listalta vai\n(3)Lopettaa?: "))
+	if valinta == 1:
+		lista.append(input(" Mitä lisätään?:"))
+	elif valinta == 2:
+		print("Listalla on" ,len(lista),"alkiota.")
+		try:
+			vastaus = int(input("Monesko niistä poistetaan?: "))
+			del lista[vastaus]
+			#lista.remove(vastaus)
+		except:
+			print("Virheellinen valinta.")
+	elif valinta == 3:
+		print("Listalla oli tuotteet:")
+		for i in lista:
+			print(i)
+		break
+	else:
+		print("Virheellinen valinta.")

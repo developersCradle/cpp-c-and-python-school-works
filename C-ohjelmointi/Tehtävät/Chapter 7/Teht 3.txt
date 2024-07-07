@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+
+int suurin(int arvo1, int arvo2,int arvo3);
+int pienin(int arvo1, int arvo2,int arvo3);
+
+
+int main(void)
+{
+	int luku1,luku2,luku3;
+	
+	printf("Anna 1. luku:");
+	scanf("%d", &luku1);
+	
+	printf("Anna 2. luku:");
+	scanf("%d", &luku2);
+	
+	printf("Anna 3. luku:");
+	scanf("%d", &luku3);
+	
+	printf("Syöttämistäsi luvuista suurin oli %d ja pienin %d.", suurin(luku1,luku2,luku3),pienin(luku1,luku2,luku3));
+	
+	return 0;
+}
+
+int suurin(int arvo1, int arvo2,int arvo3)
+{
+	if(arvo1 > arvo2 && arvo1 > arvo3)
+	{
+		return arvo1;
+	}
+	else if(arvo2 > arvo1 && arvo2 > arvo3)
+	{
+		return arvo2;
+	}
+	else if(arvo3 > arvo1 && arvo3 > arvo2)
+	{
+		return arvo3;
+	}
+	else
+	{
+		printf("Luvut olivat yhtäsuuria!\n");
+		return 0;
+	}
+
+	
+}
+int pienin(int arvo1, int arvo2,int arvo3)
+{
+	if(arvo1 < arvo2 && arvo1 < arvo3)
+	{
+		return arvo1;
+	}
+	else if(arvo2 < arvo1 && arvo2 < arvo3)
+	{
+		return arvo2;
+	}
+	else if(arvo3 < arvo1 && arvo3 < arvo2)
+	{
+		return arvo3;
+	}
+	else
+	{
+		printf("Luvut olivat yhtäsuuria!\n");
+		return 0;
+	}
+
+	
+}

@@ -1,0 +1,104 @@
+#include <stdio.h>
+
+int main(void)
+{
+	
+	int eka_matriisi[10][10];
+	int toka_matriisi[10][10];
+	int summa_matriisi[10][10];
+	
+	int x,y;
+	
+	FILE *luku_tied; 
+	FILE *luku_tied_toka; 
+	
+	FILE *kirj_tied; 
+
+	if((luku_tied = fopen("mata.txt", "r")) == NULL)
+	{ 
+		printf("Tiedoston avaus epäonnistui"); 
+		return 0; 
+	} 
+	else 
+	{ 
+		for(y = 0; y < 10; y++) 
+		{ 
+			for(x = 0; x < 10; x++)
+			{  
+				if(x == 10) 
+				{ 
+					fscanf(luku_tied, "%d\n", &eka_matriisi[y][x]);  
+				}  
+				else 
+				{  
+					fscanf(luku_tied, "%d ", &eka_matriisi[y][x]);  
+				} 
+			} 
+		} 
+	} 
+	
+	if((luku_tied_toka = fopen("matb.txt", "r")) == NULL)
+	{ 
+		printf("Tiedoston avaus epäonnistui"); 
+		return 0; 
+	} 
+	else 
+	{ 
+		for(y = 0; y < 10; y++) 
+		{ 
+			for(x = 0; x < 10; x++)
+			{  
+				if(x == 10) 
+				{ 
+					fscanf(luku_tied_toka, "%d\n", &toka_matriisi[y][x]);  
+				}  
+				else 
+				{  
+					fscanf(luku_tied_toka, "%d ", &toka_matriisi[y][x]);  
+				} 
+				
+			} 
+		} 
+	} 
+	
+	for(y = 0; y < 10; y++)
+	{  
+ 		for(x = 0; x < 10; x++)
+		{  
+			summa_matriisi[y][x] = 0; 
+			summa_matriisi[y][x] = eka_matriisi[y][x] + toka_matriisi[y][x]; 
+			
+	
+		}  
+	} 
+	
+	
+	if((kirj_tied = fopen("summa.usr" , "w")) == NULL)
+	{  
+		printf("Tiedoston avaus epäonnistui."); 
+		return 0;
+	} 
+	else 
+	{  
+		for(y = 0; y < 10; y++)
+		{  
+			for(x = 0; x < 10; x++) 
+			{  
+				if(x == 9) 
+				{ 
+ 					fprintf(kirj_tied, "%d\n", summa_matriisi[y][x]); 
+				}  
+				else 
+				{  
+					fprintf(kirj_tied, "%d ", summa_matriisi[y][x]); 
+				} 
+			} 
+		} 
+ 	} 
+
+	fclose(kirj_tied); 
+	
+	printf("Matriisien summa on laskettu tiedostoon summa.usr.\n");
+	
+	return 0;
+}

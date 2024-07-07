@@ -1,0 +1,6 @@
+def testaa(sana):
+	pituus = len(sana)
+	if(pituus < 5 or sana.isalpha() or sana.isdigit()):
+		return False
+	else:
+		return True

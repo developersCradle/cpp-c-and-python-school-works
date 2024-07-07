@@ -1,0 +1,7 @@
+maximi = 4
+alku = 0
+
+
+while alku <= maximi:
+	print("Olemme kierroksella", alku)
+	alku += 1

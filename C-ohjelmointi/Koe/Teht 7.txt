@@ -1,0 +1,27 @@
+int main(void)
+{
+	char sana[16];
+	
+	
+	int vokaalienLuk = 0;
+	
+	printf("Ohjelma laskee vokaalien m‰‰ri‰.\n");
+	printf("Anna sana:");
+	scanf("%s", &sana);
+	
+	for(int i = 0; i < 16 ;i++)
+	{
+		
+		if(sana[i] != '\0') 
+		{
+			if(sana[i] == 'a' || sana[i] == 'e' || sana[i] == 'i' || sana[i] == 'o' || sana[i] == 'u' || sana[i] == 'y')
+			{
+				vokaalienLuk++;
+			}
+		}
+	}
+	
+	printf("Sanassa vokaaleja: %i\n", vokaalienLuk);
+	
+	return 0;
+}

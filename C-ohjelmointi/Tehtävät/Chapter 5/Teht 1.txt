@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int kok_luku, jakojaannos;
+	
+	printf("Anna kokonaisluku:");
+	scanf("%d", &kok_luku);
+	jakojaannos = kok_luku % 2;
+	
+	if(jakojaannos == 0)
+	{
+		printf("Luku %d on parillinen.", kok_luku);
+	}
+	else
+	{
+		printf("Luku %d on pariton.", kok_luku);
+	}
+	
+
+	return 0;
+}

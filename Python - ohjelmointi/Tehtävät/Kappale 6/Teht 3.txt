@@ -1,0 +1,24 @@
+
+def tulostaja(merkkijono = "Oletustulostus"):
+	print(merkkijono)
+
+def main():
+	
+	while True:
+		muuttuja = input("Anna syöte (Lopeta lopettaa):")
+		pituus = len(muuttuja)
+		
+		if(muuttuja == "Lopeta"):
+			break
+		elif(pituus >= 5):
+			tulostaja(muuttuja)
+		else:
+			tulostaja()
+		
+			
+	
+	
+	
+	
+if __name__ == "__main__":
+	main()

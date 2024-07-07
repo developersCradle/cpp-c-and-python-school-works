@@ -1,0 +1,12 @@
+luku = int(input("Anna luku: "))
+luku = luku % 2
+
+luku2 = int(input("Anna toinen luku:"))
+luku2 = luku2 % 2
+
+if(luku == 0) and (luku2 == 0):
+	print("Molemmat luvut ovat parillisia.")
+elif((luku == 1) and (luku2 == 0) or (luku == 0) and (luku2 == 1)):
+	print("Toinen luku on parillinen.")
+else:
+	print("Molemmat luvut ovat parittomia.")
